@@ -1,0 +1,50 @@
+.title{
+  position: relative;
+    top: 54px;
+}
+.search{
+  position: relative;
+    top: 60px;
+  }
+  .card-list{
+    margin-left: 0px;
+    height: 143px;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .row-position{
+    position: relative;
+    top: 60px;
+  }
+  .c-set{
+    margin: auto;
+    width: 66px;
+    height: 66px;
+  }
+  .postion-set{
+    position: relative;
+    top: 15px;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+  
+    th {
+      background-color: red;
+      border: 1px solid red;
+    }
+    td {
+      border: 1px solid #dddddd;
+    }
+    td, th {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  }
+  

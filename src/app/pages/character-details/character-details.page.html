@@ -1,0 +1,85 @@
+
+<ion-content>
+  <div class="pos-set">
+    <div class="close" (click)="dismiss()">
+      <ion-icon size="large" color="primary" name="close"></ion-icon>
+    </div>
+    <ion-avatar class="c-set ion-text-center">
+      <img [src]="item.image">
+    </ion-avatar>
+    <div class="ion-text-center">
+      <strong class="pos-s">
+        {{item.name}}
+      </strong>
+    </div>
+    <ion-item class="ion-padding-top">
+      <strong >
+        Gender:
+      </strong >
+      &nbsp;&nbsp;
+      <ion-text>
+        {{item.gender}}
+      </ion-text>
+    </ion-item>
+  
+    <ion-item >
+      <strong >
+        Species:
+      </strong >
+      &nbsp;&nbsp;
+      <ion-text>
+        {{item.species}}
+      </ion-text>
+    </ion-item>
+  
+    <ion-item >
+      <strong >
+        Status:
+      </strong >
+      &nbsp;&nbsp;
+      <ion-text>
+        {{item.status}}
+      </ion-text>
+    </ion-item>
+  
+    <ion-item >
+      <ion-icon name="location" color="medium"></ion-icon>
+      <strong >
+        Location:
+      </strong >
+      &nbsp;&nbsp;
+      <ion-text>
+        {{item.location.name}}
+      </ion-text>
+    </ion-item>
+  
+  
+  <ion-card class="ion-padding" (click)="editPerson()">
+    <strong >
+      Episode:
+    </strong>
+    <ion-text class="ion-float-right" color="primary" *ngIf="!Toggle">
+      View All
+    </ion-text>
+    <ion-text class="ion-float-right" color="primary" *ngIf="Toggle">
+      View Less
+    </ion-text>
+    &nbsp;&nbsp;
+    <ion-text *ngIf="Toggle">
+  
+<div *ngFor="let ep of item.episode">
+<a [href]="ep">{{ep}}</a>
+  
+    </div>
+
+    </ion-text>
+  </ion-card>
+  </div>
+  
+  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

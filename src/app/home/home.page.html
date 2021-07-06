@@ -1,0 +1,45 @@
+
+<ion-content>
+ <!-- title div -->
+  <div class="title ion-text-center">
+ <!-- title -->
+    <strong>
+      Rick & morty
+    </strong><br>
+    <!-- <div *ngFor="let item of getItemlist.info">
+      {{item.pages}}
+    </div> -->
+   
+  </div>
+ <!-- search div -->
+  <div class="search">
+     <!-- Searchbar with cancel button never shown -->
+      <ion-searchbar [(ngModel)]="filterTerm" mode="ios" showCancelButton="never"></ion-searchbar>
+  </div>
+  <!-- card list -->
+  <ion-row class="row-position ion-padding">
+    <ion-col class="ion-text-center" size="6" size-lg="3" size-md="3" *ngFor="let item of getItemlist | filter:filterTerm">
+      <ion-card class="card-list" (click)="presentModal(item)">
+        <div class="postion-set">
+          <ion-avatar class="c-set ion-text-center">
+            <img [src]="item.image">
+          </ion-avatar>
+        <strong class="">
+          {{item.name}}
+        </strong><br>
+        <ion-icon name="location"></ion-icon>
+        <ion-text >
+          {{item.location.name}}
+        </ion-text>
+      </div>
+          </ion-card>  
+    </ion-col>
+  </ion-row>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

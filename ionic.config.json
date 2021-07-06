@@ -1,0 +1,7 @@
+{
+  "name": "rickandmorty-noman",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
