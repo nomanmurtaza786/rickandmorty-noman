@@ -13,4 +13,10 @@ export class GetApisService {
     const chApiUrl = 'https://rickandmortyapi.com/api/character/?page='+page;
     return this.http.get(chApiUrl);
   }
+
+  // get character api data by search 
+  getserachcharacterapi(page: number, name: any) {
+    const chApiUrl = 'https://rickandmortyapi.com/api/character/?page='+page+'&name='+name;
+    return this.http.get(chApiUrl);
+  }
 }

@@ -14,11 +14,11 @@
  <!-- search div -->
   <div class="search">
      <!-- Searchbar with cancel button never shown -->
-      <ion-searchbar [(ngModel)]="filterTerm" mode="ios" showCancelButton="never"></ion-searchbar>
+      <ion-searchbar [(ngModel)]="filterTerm" (ionChange)="search()" mode="ios" showCancelButton="never"></ion-searchbar>
   </div>
   <!-- card list -->
   <ion-row class="row-position ion-padding">
-    <ion-col class="ion-text-center" size="6" size-lg="3" size-md="3" *ngFor="let item of getItemlist | filter:filterTerm">
+    <ion-col class="ion-text-center" size="6" size-lg="3" size-md="3" *ngFor="let item of getItemlist">
       <ion-card class="card-list" (click)="presentModal(item)">
         <div class="postion-set">
           <ion-avatar class="c-set ion-text-center">
@@ -36,7 +36,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll *ngIf="!filterTerm" threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
       loadingText="Loading more data...">

@@ -58,4 +58,13 @@ this.getCharacterData();
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 
+  search(){
+    this.page = 0;
+    this.getapi.getserachcharacterapi(this.page, this.filterTerm)
+      .subscribe((data: any) => {
+        console.log('data', data);
+        this.getItemlist = data.results;
+        console.log('data', this.getItemlist);
+      });
+  }
 }
